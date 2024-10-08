@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   nitro: {
     preset: "vercel_edge",
     rollupConfig: {
-      external: ["@builder.io/sdk-vue/node/init"],
+      external: ["isolated-vm"],
     },
   },
   modules: [
