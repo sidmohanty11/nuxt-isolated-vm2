@@ -4,9 +4,6 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   nitro: {
     preset: "vercel_edge",
-    rollupConfig: {
-      external: ["isolated-vm"],
-    },
   },
   modules: [
     [
