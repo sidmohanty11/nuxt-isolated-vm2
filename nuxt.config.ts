@@ -3,7 +3,10 @@ export default defineNuxtConfig({
   compatibilityDate: "2024-04-03",
   devtools: { enabled: true },
   nitro: {
-    preset: "vercel",
+    preset: "vercel_edge",
+    rollupConfig: {
+      external: ["@builder.io/sdk-vue/node/init"],
+    },
   },
   modules: [
     [
