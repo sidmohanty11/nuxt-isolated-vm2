@@ -29,6 +29,12 @@ jobs:
       - name: Print GLIBCXX Version
         run: strings /usr/lib/x86_64-linux-gnu/libstdc++.so.6 | grep GLIBCXX
 
+      - name: Locate GLIBCXX
+        run: locate libstdc++.so.6
+
+      - name: ldd
+        run: ldd /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+
       - name: Install Project Dependencies
         run: npm install
 
