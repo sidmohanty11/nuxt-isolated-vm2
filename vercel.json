@@ -1,6 +1,6 @@
 {
   "framework": "nuxtjs",
   "devCommand": "npm run dev",
-  "buildCommand": "npm run build",
-  "installCommand": "yum install -y libstdc++6 && npm install"
+  "buildCommand": "yum install -y libstdc++6 && npm run build",
+  "installCommand": "npm install"
 }

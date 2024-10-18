@@ -18,6 +18,9 @@ jobs:
         with:
           node-version: 20
 
+      - name: Install libstdc++6
+        run: sudo apt-get update && sudo apt-get install -y libstdc++6
+
       - name: Install Project Dependencies
         run: npm install
 
@@ -28,7 +31,7 @@ jobs:
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Build Project Artifacts
-        run: apt-get install -y libstdc++6 && vercel build --token=${{ secrets.VERCEL_TOKEN }}
+        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Deploy Project Artifacts to Vercel
         run: |
