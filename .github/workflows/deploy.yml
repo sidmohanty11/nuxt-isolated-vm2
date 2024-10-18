@@ -30,8 +30,7 @@ jobs:
         run: strings /usr/lib/x86_64-linux-gnu/libstdc++.so.6 | grep GLIBCXX
 
       - name: Echo me
-        run: echo $LD_LIBRARY_PATH 
-        run: echo $LIBRARY_PATH
+        run: echo $LD_LIBRARY_PATH && echo $LIBRARY_PATH
 
       - name: Install Project Dependencies
         run: npm install
