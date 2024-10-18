@@ -4,7 +4,7 @@
   "buildCommand": "npm run build",
   "installCommand": "npm install",
   "functions": {
-    "*": {
+    "__nitro.func": {
       "includeFiles": "lib/**"
     }
   }
