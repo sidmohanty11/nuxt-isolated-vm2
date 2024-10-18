@@ -24,14 +24,14 @@ jobs:
       - name: Install Dependencies for GLIBCXX
         run: |
           apt-get update && \
-          apt-get install -y build-essential libstdc++6
+          apt-get install -y build-essential libstdc++6 gcc-9
 
       - name: Print GLIBCXX Version
         run: strings /usr/lib/x86_64-linux-gnu/libstdc++.so.6 | grep GLIBCXX
 
       - name: set LD_LIBRARY_PATH
         run: |
-          export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu
+          export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu/
           echo $LD_LIBRARY_PATH
 
       - name: Install Project Dependencies
@@ -47,4 +47,6 @@ jobs:
         run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Deploy Project Artifacts to Vercel
-        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+        run: |
+          export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu/
+          vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
