@@ -7,7 +7,8 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "vercel-build": "yum install -y libstdc++6 && nuxt build"
   },
   "dependencies": {
     "@builder.io/sdk-vue": "2.0.17",
