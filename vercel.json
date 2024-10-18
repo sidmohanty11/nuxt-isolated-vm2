@@ -2,5 +2,10 @@
   "framework": "nuxtjs",
   "devCommand": "npm run dev",
   "buildCommand": "npm run build",
-  "installCommand": "npm install"
+  "installCommand": "npm install",
+  "functions": {
+    "*": {
+      "includeFiles": ["lib/**"]
+    }
+  }
 }
