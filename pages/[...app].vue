@@ -20,6 +20,7 @@ const { data: content } = await useAsyncData("builderData", () =>
     model,
     apiKey,
     userAttributes: {
+      // saf
       urlPath: "/data-symbols",
     },
   })
