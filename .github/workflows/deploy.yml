@@ -16,9 +16,6 @@ jobs:
       - name: Print strings /usr/lib/x86_64-linux-gnu/libstdc++.so.6 | grep GLIBCXX
         run: strings /usr/lib/x86_64-linux-gnu/libstdc++.so.6 | grep GLIBCXX
 
-      - name: link libstdc++6
-        run: export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH
-
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
