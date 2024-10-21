@@ -8,13 +8,16 @@ on:
       - main
 jobs:
   Deploy-Production:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
 
       - name: Print strings /usr/lib/x86_64-linux-gnu/libstdc++.so.6 | grep GLIBCXX
         run: strings /usr/lib/x86_64-linux-gnu/libstdc++.so.6 | grep GLIBCXX
+
+      - name: Install gcc9 and libstdc++6
+        run: sudo apt-get install -y gcc-9 libstdc++-9-dev build-essential
 
       - name: Use Node.js
         uses: actions/setup-node@v4
