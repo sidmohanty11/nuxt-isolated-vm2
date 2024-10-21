@@ -1,3 +1,0 @@
-{
-  "installCommand": "dnf install -y gcc-9 libstdc++6 build-essential && npm install"
-}
