@@ -6,7 +6,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "nuxt build",
+    "build": "nuxt build && cd .vercel/output/functions && npm i",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
