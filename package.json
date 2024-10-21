@@ -6,7 +6,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "nuxt build && cd .vercel/output/functions && prebuild-install || (node-gyp rebuild --release -j max && node-gyp clean)",
+    "build": "nuxt build && cd .vercel/output/functions/__nitro.func && prebuild-install || (node-gyp rebuild --release -j max && node-gyp clean)",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
