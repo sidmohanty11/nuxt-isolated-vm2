@@ -16,11 +16,8 @@ jobs:
       - name: Print strings /usr/lib/x86_64-linux-gnu/libstdc++.so.6 | grep GLIBCXX
         run: strings /usr/lib/x86_64-linux-gnu/libstdc++.so.6 | grep GLIBCXX
 
-      - name: Print find / -name libstdc++.so.6 2>/dev/null
-        run: find / -name libstdc++.so.6 2>/dev/null
-
-      - name: Print ldd /usr/lib/x86_64-linux-gnu/libstdc++.so.6
-        run: ldd /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+      - name: Re-install libstdc++6
+        run: sudo apt update && sudo apt install --reinstall libstdc++6
 
       - name: Use Node.js
         uses: actions/setup-node@v4
