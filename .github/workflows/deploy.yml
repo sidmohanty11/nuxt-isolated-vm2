@@ -8,10 +8,13 @@ on:
       - main
 jobs:
   Deploy-Production:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
+
+      - name: Print strings /usr/lib/x86_64-linux-gnu/libstdc++.so.6 | grep GLIBCXX
+        run: strings /usr/lib/x86_64-linux-gnu/libstdc++.so.6 | grep GLIBCXX
 
       - name: Use Node.js
         uses: actions/setup-node@v4
